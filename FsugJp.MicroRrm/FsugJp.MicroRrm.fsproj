@@ -52,7 +52,7 @@
     <Compile Include="AssemblyInfo.fs" />
     <Compile Include="FsugJp.MicroRrm.fsi" />
     <Compile Include="FsugJp.MicroRrm.fs" />
-    <None Include="Sample.fsx" />
+    <None Include="..\samples\MicroRrm.fsx" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="mscorlib" />

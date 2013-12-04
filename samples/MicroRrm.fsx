@@ -1,4 +1,4 @@
-﻿#r @".\bin\Debug\FsugJp.MicroRrm.dll"
+﻿#r @"..\FsugJp.MicroRrm\bin\Debug\FsugJp.MicroRrm.dll"
 
 open System
 open System.Data.Common
