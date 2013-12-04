@@ -18,15 +18,6 @@ module DbExtensions =
             cnn.Open()
             cnn
 
-[<AttributeUsage(AttributeTargets.Class, AllowMultiple = false, Inherited = false)>]
-type DbSchemaAttribute() =
-    inherit Attribute()
-
-type DbRecordFieldInfo =
-    { Index : int; Name : string; Type : Type; Value : obj }
-
-[<AutoOpen>]
-module Internals =
     type System.Data.IDbConnection with
         member cnn.CreateCommand(commandText) =
             let cmd = cnn.CreateCommand()
@@ -38,6 +29,15 @@ module Internals =
             let value = r.GetValue(i)
             if DBNull.Value.Equals(value) then null else value
 
+[<AttributeUsage(AttributeTargets.Class, AllowMultiple = false, Inherited = false)>]
+type DbSchemaAttribute() =
+    inherit Attribute()
+
+type DbRecordFieldInfo =
+    { Index : int; Name : string; Type : Type; Value : obj }
+
+[<AutoOpen>]
+module Internals =
     let inline assertBy f x = assert (f x); x
 
     let dynamicDefaultOf (typ: Type) = if typ.IsValueType then Activator.CreateInstance(typ) else null
