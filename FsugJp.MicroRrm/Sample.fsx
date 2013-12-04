@@ -22,7 +22,7 @@ module Program =
     // Adventure Works for SQL Server 2012: http://msftdbprodsamples.codeplex.com/releases/view/55330
     let provider = @"System.Data.SqlClient"
     let cnnstr   = @"Data Source=(LocalDB)\v11.0;Integrated Security=True;"
-                 + @"AttachDbFilename=" + envvar "%userprofile%\LocalDB\AdventureWorks2012_Data.mdf"
+                 + @"AttachDbFilename=" + envvar @"%userprofile%\LocalDB\AdventureWorks2012_Data.mdf"
 
     let main _ =
         let factory = DbProviderFactories.GetFactory(provider)
