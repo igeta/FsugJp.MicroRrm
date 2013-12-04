@@ -22,11 +22,11 @@ module DbExtensions =
 type DbSchemaAttribute() =
     inherit Attribute()
 
-type internal DbRecordFieldInfo =
+type DbRecordFieldInfo =
     { Index : int; Name : string; Type : Type; Value : obj }
 
 [<AutoOpen>]
-module internal Internals =
+module Internals =
     type System.Data.IDbConnection with
         member cnn.CreateCommand(commandText) =
             let cmd = cnn.CreateCommand()

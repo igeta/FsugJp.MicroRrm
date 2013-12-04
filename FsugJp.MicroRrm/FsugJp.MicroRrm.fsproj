@@ -50,6 +50,7 @@
   <Import Project="$(FSharpTargetsPath)" />
   <ItemGroup>
     <Compile Include="AssemblyInfo.fs" />
+    <Compile Include="FsugJp.MicroRrm.fsi" />
     <Compile Include="FsugJp.MicroRrm.fs" />
     <None Include="Sample.fsx" />
   </ItemGroup>
